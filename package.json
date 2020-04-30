@@ -11,7 +11,9 @@
     "storybook": "NODE_ENV=development start-storybook -p 8080 -c .storybook",
     "storybook:export": "build-storybook -c .storybook -o public",
     "speculate": "speculate",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,8 @@
   "homepage": "https://github.com/bbc/psammead#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "speculate": "^1.7.4"
+    "speculate": "^1.7.4",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.11",
@@ -75,5 +78,6 @@
       "cp -af /usr/lib/PSAMMEAD-COMPONENT-LIBRARY/bake-scripts/. /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY",
       "chmod +x /etc/bake-scripts/PSAMMEAD-COMPONENT-LIBRARY/*"
     ]
-  }
+  },
+  "snyk": true
 }
